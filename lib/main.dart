@@ -6,7 +6,7 @@ import 'package:application_1/shop_app/constant/constant_screen.dart';
 
 import 'package:application_1/shop_app/cubit/app_cubit.dart';
 import 'package:application_1/shop_app/cubit/app_states.dart';
-import 'package:application_1/shop_app/onBoardingScreen/on_boarding_screen.dart';
+import 'package:application_1/shop_app/onBoardingScreen/Components/Screens/on_boarding_screen.dart';
 import 'package:application_1/shop_app/screens/login/shop_login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

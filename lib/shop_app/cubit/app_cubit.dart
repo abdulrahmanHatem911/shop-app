@@ -21,10 +21,10 @@ class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppinInitialStates());
   static AppCubit get(context) => BlocProvider.of(context);
   int currentIndex = 0;
-  List<Widget> bottomScreens = [
+  List bottomScreens = [
     const ProductsScreen(),
     const CategoriesScreen(),
-    FavoritesScreen(),
+    const FavoritesScreen(),
     SettingScreeen(),
   ];
   void changeBottom(int index) {

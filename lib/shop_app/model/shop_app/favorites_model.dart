@@ -1,6 +1,8 @@
+// ignore_for_file: unnecessary_new, unnecessary_this
+
 class FavoritesModel {
-  bool status = true;
-  String message = '';
+  bool? status;
+  String? message;
   Data? data;
 
   FavoritesModel.fromJson(Map<String, dynamic> json) {
@@ -12,15 +14,15 @@ class FavoritesModel {
 
 class Data {
   int? currentPage;
-  List<FavoritesData> data = [];
-  String firstPageUrl = '';
+  List<FavoritesData>? data;
+  String? firstPageUrl;
   int? from;
   int? lastPage;
-  String lastPageUrl = '';
-  String nextPageUrl = '';
-  String path = '';
+  String? lastPageUrl;
+  String? nextPageUrl;
+  String? path;
   int? perPage;
-  String prevPageUrl = '';
+  String? prevPageUrl;
   int? to;
   int? total;
 
@@ -29,7 +31,7 @@ class Data {
     if (json['data'] != null) {
       data = [];
       json['data'].forEach((v) {
-        data.add(new FavoritesData.fromJson(v));
+        data!.add(new FavoritesData.fromJson(v));
       });
     }
     firstPageUrl = json['first_page_url'];
@@ -46,7 +48,7 @@ class Data {
 }
 
 class FavoritesData {
-  int id = 0;
+  int? id;
   Product? product;
 
   FavoritesData.fromJson(Map<String, dynamic> json) {
@@ -56,13 +58,23 @@ class FavoritesData {
 }
 
 class Product {
-  int? id;
-  dynamic price;
-  dynamic oldPrice;
-  int? discount;
-  String image = '';
-  String name = '';
-  String description = '';
+  late int id;
+  late dynamic price;
+  late dynamic oldPrice;
+  late int discount;
+  late String image;
+  late String name;
+  late String description;
+
+  Product({
+    required this.id,
+    required this.price,
+    required this.oldPrice,
+    required this.discount,
+    required this.image,
+    required this.name,
+    required this.description,
+  });
 
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -72,5 +84,17 @@ class Product {
     image = json['image'];
     name = json['name'];
     description = json['description'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['price'] = this.price;
+    data['old_price'] = this.oldPrice;
+    data['discount'] = this.discount;
+    data['image'] = this.image;
+    data['name'] = this.name;
+    data['description'] = this.description;
+    return data;
   }
 }

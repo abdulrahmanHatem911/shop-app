@@ -13,6 +13,8 @@ class SettingScreeen extends StatelessWidget {
   var nameController = TextEditingController();
   var emailController = TextEditingController();
   var phoneController = TextEditingController();
+
+  SettingScreeen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppStates>(
@@ -20,7 +22,7 @@ class SettingScreeen extends StatelessWidget {
         if (state is ShopSuccessUserDataState) {}
       },
       builder: (context, state) {
-        // thecubit
+        // the cubit
         var cubit = AppCubit.get(context);
         AppCubit cubit_2 = AppCubit.get(context);
         nameController.text = cubit_2.userModel!.data!.name;
