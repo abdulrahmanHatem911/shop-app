@@ -154,6 +154,7 @@ class ShopLoginScreen extends StatelessWidget {
                                       password: passowrdController.text,
                                     );
                                   }
+                                  navigateTo(context, ShopLayout());
                                 },
                                 child: const Text(
                                   'LOGIN',

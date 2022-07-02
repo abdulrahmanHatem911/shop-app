@@ -3,20 +3,10 @@ import 'package:application_1/shop_app/screens/login/shop_login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../constant/color/theme_screen.dart';
-import '../constant/constant_screen.dart';
-import '../constant/Netowrk/locale/cash_helper.dart';
-
-class OnBoarding {
-  final String body;
-  final String title;
-  final String image;
-  OnBoarding({
-    required this.body,
-    required this.title,
-    required this.image,
-  });
-}
+import '../../constant/color/theme_screen.dart';
+import '../../constant/constant_screen.dart';
+import '../../constant/Netowrk/locale/cash_helper.dart';
+import '../Components/onboarding_data.dart';
 
 // the varible to controll the last page
 bool isLast = false;
@@ -40,34 +30,10 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  // controller fotr page view
+  var boardingController = PageController();
   @override
   Widget build(BuildContext context) {
-    // the list to dispaye the screens
-    List<OnBoarding> screen = [
-      OnBoarding(
-        body: 'on Boarding 1 body',
-        title: 'on Boarding 1 title',
-        image: 'assest/image/Drawe_4.png',
-      ),
-      OnBoarding(
-        body: 'on Boarding 2 body',
-        title: 'on Boarding 2 title',
-        image: 'assest/image/Drawe_5.png',
-      ),
-      OnBoarding(
-        body: 'on Boarding 3 body',
-        title: 'on Boarding 3 title',
-        image: 'assest/image/Drawe_3.png',
-      ),
-      OnBoarding(
-        body: 'on Boarding 4 body',
-        title: 'on Boarding 4 title',
-        image: 'assest/image/Drawe_6.png',
-      ),
-    ];
-    // controller fotr page view
-    var boardingController = PageController();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('On Boarding Screen'),
@@ -150,32 +116,4 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
     );
   }
-
-  Widget buildBoardingItem(model) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Image(
-              image: AssetImage('${model.image}'),
-            ),
-          ),
-          const SizedBox(height: 30.0),
-          Text(
-            '${model.title}',
-            style: const TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 15.0),
-          Text(
-            '${model.body}',
-            style: const TextStyle(
-              fontSize: 14.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 30.0),
-        ],
-      );
 }
