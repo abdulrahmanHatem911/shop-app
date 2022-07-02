@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_new, unnecessary_this
+
 class FavoritesModel {
   bool? status;
   String? message;

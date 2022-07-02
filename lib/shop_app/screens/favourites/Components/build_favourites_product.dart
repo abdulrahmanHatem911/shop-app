@@ -71,19 +71,20 @@ Widget buildListProduct(FavoritesData model, context) {
                     const Spacer(),
                     Expanded(
                       child: IconButton(
-                          icon: AppCubit.get(context)
-                                  .favourites[model.product!.id]!
-                              ? const Icon(
-                                  Icons.favorite,
-                                  size: 17.0,
-                                  color: Colors.red,
-                                )
-                              : const Icon(
-                                  Icons.favorite_border,
-                                  size: 17.0,
-                                  // color: Colors.white,
-                                ),
-                          onPressed: () {}),
+                        icon:
+                            AppCubit.get(context).favourites[model.product!.id]!
+                                ? const Icon(
+                                    Icons.favorite,
+                                    size: 17.0,
+                                    color: Colors.red,
+                                  )
+                                : const Icon(
+                                    Icons.favorite_border,
+                                    size: 17.0,
+                                    // color: Colors.white,
+                                  ),
+                        onPressed: () {},
+                      ),
                     ),
                   ],
                 ),

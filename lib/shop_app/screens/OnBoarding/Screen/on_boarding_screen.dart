@@ -3,9 +3,9 @@ import 'package:application_1/shop_app/screens/login/shop_login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../constant/color/theme_screen.dart';
-import '../../constant/constant_screen.dart';
-import '../../constant/Netowrk/locale/cash_helper.dart';
+import '../../../constant/Netowrk/locale/cash_helper.dart';
+import '../../../constant/color/theme_screen.dart';
+import '../../../constant/constant_screen.dart';
 import '../Components/onboarding_data.dart';
 
 // the varible to controll the last page
