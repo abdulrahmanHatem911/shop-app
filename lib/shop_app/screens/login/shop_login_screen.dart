@@ -4,6 +4,7 @@ import 'package:application_1/shop_app/constant/color/theme_screen.dart';
 import 'package:application_1/shop_app/constant/constant_screen.dart';
 import 'package:application_1/shop_app/constant/Netowrk/locale/cash_helper.dart';
 import 'package:application_1/shop_app/home%20layout/shop_layout.dart';
+import 'package:application_1/shop_app/onBoardingScreen/Components/Screens/on_boarding_screen.dart';
 import 'package:application_1/shop_app/screens/login/cubit/login_state.dart';
 import 'package:application_1/shop_app/screens/regester/regester_screen.dart';
 
@@ -154,7 +155,7 @@ class ShopLoginScreen extends StatelessWidget {
                                       password: passowrdController.text,
                                     );
                                   }
-                                  navigateTo(context, ShopLayout());
+                                  navigateTo(context, OnBoardingScreen());
                                 },
                                 child: const Text(
                                   'LOGIN',
